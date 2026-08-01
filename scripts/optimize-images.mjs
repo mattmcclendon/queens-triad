@@ -10,7 +10,11 @@ const supported = new Set(['.jpg', '.jpeg', '.png', '.webp', '.tif', '.tiff']);
 await mkdir(sourceDir, { recursive: true });
 await mkdir(outputDir, { recursive: true });
 
-const files = (await readdir(sourceDir)).filter((file) => supported.has(extname(file).toLowerCase()));
+const requested = new Set(process.argv.slice(2));
+const files = (await readdir(sourceDir)).filter((file) => {
+  if (!supported.has(extname(file).toLowerCase())) return false;
+  return !requested.size || requested.has(file) || requested.has(parse(file).name);
+});
 
 if (!files.length) {
   console.log('Add the qt-* source images to public/images/originals, then run this again.');
