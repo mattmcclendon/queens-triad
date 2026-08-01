@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ImageFigure from '../components/ImageFigure.astro';
 import AdaptivePicture from '../components/AdaptivePicture.astro';
-import Picture from '../components/Picture.astro';
+import OrbitalDiagram from '../components/OrbitalDiagram.astro';
 ---
 
 <BaseLayout>
@@ -39,7 +39,7 @@ import Picture from '../components/Picture.astro';
         </div>
         <aside class="heritage__record" aria-label="Planetary protection record">
           <span>Protection authority</span>
-          <strong>Federation Bureau of Planetary Heritage</strong>
+          <strong>Federation Bureau of Planetary Heritage <small>Working designation</small></strong>
           <p>Ecological preserves, archaeological landscapes, and intact cultural sites beyond Maia Station are held under protected status.</p>
         </aside>
       </div>
@@ -126,7 +126,7 @@ import Picture from '../components/Picture.astro';
           <div><dt>System</dt><dd>Maia trinary</dd></div>
           <div><dt>Classification</dt><dd>Class-M heritage world</dd></div>
           <div><dt>Surface gravity</dt><dd>0.8 g</dd></div>
-          <div><dt>Local year</dt><dd>345–350 Earth days</dd></div>
+          <div><dt>Orbital regime</dt><dd>Maia A/B circumbinary</dd></div>
           <div><dt>Primary settlement</dt><dd>Maia Station</dd></div>
         </dl>
 
@@ -136,42 +136,32 @@ import Picture from '../components/Picture.astro';
             <h3>The Queens</h3>
           </header>
           <div class="reference-block__content">
-            <p class="reference-lede">Queen’s Triad is a compact hierarchical system of three main-sequence stars. Their combined illumination produces Maia IV’s warm daylight without requiring all three stellar discs to dominate the sky.</p>
-            <figure class="system-plate">
-              <Picture
-                name="qt-orbits-001"
-                alt="Orbital plate showing the three Maia stars, the broad circumtrinary orbit of Maia IV, and an enlarged view of its three moons"
-                sizes="(min-width: 900px) 66vw, 100vw"
-              />
-              <figcaption>
-                <span>Maia system · Orbital architecture</span>
-                <p>The compact hierarchy of the Queens sits inside Maia IV’s broad planetary path. The inset resolves the three lunar orbits of Clotho, Lachesis, and Atropos; relative scale is diagrammatic.</p>
-              </figcaption>
-            </figure>
+            <p class="reference-lede">Maia A and Maia B form a close central binary. Maia I, II, and III occupy the inner system before the inhabited Maia IV. Maia C is the distant third star; Maia V through Maia XII occupy the much larger outer system beyond the red dwarf.</p>
+            <OrbitalDiagram />
             <div class="stellar-census">
               <section>
-                <span>Maia A · G-type</span>
-                <h4>Golden-white primary</h4>
-                <p>The dominant source of daylight.</p>
+                <span>Maia A · K-type</span>
+                <h4>Orange-dwarf primary</h4>
+                <p>The dominant member of the close central binary and the principal source of usable light and heat.</p>
               </section>
               <section>
-                <span>Maia B · K-type</span>
-                <h4>Amber secondary</h4>
-                <p>Strengthens the system’s warm spectrum.</p>
+                <span>Maia B · Dwarf companion</span>
+                <h4>Orange-dwarf secondary</h4>
+                <p>Gravitationally bound to Maia A in the tight central stellar pair.</p>
               </section>
               <section>
-                <span>Maia C · K-type</span>
-                <h4>Orange companion</h4>
-                <p>Contributes subtler seasonal color shifts.</p>
+                <span>Maia C · M-type</span>
+                <h4>Remote red dwarf</h4>
+                <p>The distant red dwarf beyond Maia IV and the system’s third sustained light source.</p>
               </section>
             </div>
             <dl class="reference-metrics">
-              <div><dt>Combined luminosity</dt><dd>≈ 1.4 Sol</dd></div>
-              <div><dt>Orbital distance</dt><dd>≈ 1.3 AU</dd></div>
-              <div><dt>Configuration</dt><dd>Circumtrinary</dd></div>
-              <div><dt>Daylight</dt><dd>Warm and diffuse</dd></div>
+              <div><dt>Primary</dt><dd>K-type orange dwarf</dd></div>
+              <div><dt>Planetary orbits</dt><dd>P-type · Maia A/B</dd></div>
+              <div><dt>System structure</dt><dd>Hierarchical trinary</dd></div>
+              <div><dt>Known planets</dt><dd>Maia I through Maia XII</dd></div>
             </dl>
-            <p class="reference-note">The three stars are collectively called the Queens. The name originated with Maia IV’s vanished civilization and was retained by Federation cartographers. Their presence is expressed more often through warmth, color, and changing light than through three prominent suns.</p>
+            <p class="reference-note">The three stars are collectively called the Queens. The name originated with Maia IV’s vanished civilization and was retained by Federation cartographers. Exact stellar masses, spectral subtype for Maia B, luminosities, eccentricities, separations, and orbital periods remain open canon; the plate establishes ordering and hierarchy, not scale.</p>
           </div>
         </article>
 
@@ -184,18 +174,18 @@ import Picture from '../components/Picture.astro';
             <div>
               <dl class="reference-list">
                 <div><dt>Planet type</dt><dd>Temperate terrestrial</dd></div>
-                <div><dt>Radius</dt><dd>≈ 1.07 Earth radii</dd></div>
-                <div><dt>Estimated mass</dt><dd>≈ 0.92 Earth masses</dd></div>
-                <div><dt>Atmosphere</dt><dd>Nitrogen–oxygen dominant</dd></div>
-                <div><dt>Surface pressure</dt><dd>Near terrestrial standard</dd></div>
-                <div><dt>Hydrosphere</dt><dd>Oceans, inland seas, and freshwater systems</dd></div>
+                <div><dt>Radius</dt><dd>Slightly larger than Earth</dd></div>
+                <div><dt>Surface gravity</dt><dd>0.8 g</dd></div>
+                <div><dt>Bulk density</dt><dd>Lower than Earth</dd></div>
+                <div><dt>Atmosphere</dt><dd>Human-breathable Class-M environment</dd></div>
+                <div><dt>Hydrosphere</dt><dd>Extensive surface water</dd></div>
               </dl>
-              <p class="reference-note">Although slightly larger than Earth, Maia IV has lower surface gravity because its interior contains a smaller proportion of dense metals.</p>
+              <p class="reference-note">A larger radius combined with 0.8-g surface gravity requires a lower average density than Earth. The planet’s exact radius, mass, atmospheric pressure, and interior composition have not yet been canonized.</p>
             </div>
             <div>
               <h4>Atmosphere and sky</h4>
-              <p>Native photosynthetic aeroplankton inhabit the upper atmosphere and cloud-forming layers. Under the warm combined spectrum of the Maia stars, their pigments and metabolic activity intensify the planet’s tangerine sky and pale celadon clouds.</p>
-              <p>As temperatures fall after sunset, the organisms enter a lower-energy state and descend within the atmosphere. The colored daytime scattering diminishes, revealing a deep cobalt sky.</p>
+              <p>Native photosynthetic aeroplankton inhabit the upper atmosphere and cloud-forming layers. Illuminated primarily by Maia A, their pigments—and the size and concentration of the biological aerosols around them—alter how daylight scatters through the atmosphere, contributing to the tangerine sky and pale celadon clouds.</p>
+              <p>After sunset there is no direct stellar light to scatter. The organisms’ cooling and downward migration are worldbuilding mechanisms for the rapid loss of the green cast during twilight, leaving a deep cobalt night sky.</p>
             </div>
           </div>
         </article>
@@ -222,9 +212,9 @@ import Picture from '../components/Picture.astro';
                 <li>Giant fungal forests and extensive mycelial networks</li>
                 <li>Low-gravity megaflora</li>
                 <li>Bioluminescent nocturnal organisms</li>
-                <li>Native preserve ecosystems with no permanent human access</li>
+                <li>Native preserve ecosystems under restricted human access</li>
               </ul>
-              <p class="reference-note">Some fungal specimens grow to monumental scale, supported by the planet’s 0.8-g gravity.</p>
+              <p class="reference-note">Lower gravity reduces structural self-loading and helps make monumental growth plausible, but it does not determine height by itself; tissue mechanics, transport, wind, and ecology still matter.</p>
             </div>
           </div>
         </article>
@@ -238,7 +228,7 @@ import Picture from '../components/Picture.astro';
             <div>
               <p class="reference-lede">Long before Humanity developed interstellar travel, Maia IV supported an advanced indigenous civilization. It had already been extinct for an immense span of time when Federation surveyors arrived.</p>
               <p>The civilization organized mathematics, measurement, architecture, astronomy, language, and symbolic thought around base three. The Queens, the Fates, and their associated symbolism all originate in this culture.</p>
-              <p class="reference-note">The cause of its disappearance remains unresolved.</p>
+              <p>The cause of its disappearance remains unknown.</p>
             </div>
             <div>
               <h4>Surviving evidence</h4>
@@ -261,7 +251,7 @@ import Picture from '../components/Picture.astro';
           <div class="reference-block__content record-columns">
             <div>
               <p class="authority-label">Protection authority</p>
-              <h4>Federation Bureau of Planetary Heritage</h4>
+              <h4>Federation Bureau of Planetary Heritage <small>Working designation</small></h4>
               <p>Most of Maia IV is protected. Permanent settlement outside designated zones is prohibited, leaving Maia Station as the planet’s only substantial population center.</p>
               <p class="reference-note">Limited agricultural, research, and transit corridors extend beyond the station.</p>
             </div>

@@ -82,6 +82,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .heritage__record { display: grid; grid-template-columns: .7fr 1.1fr 1.4fr; gap: 2rem; align-items: start; margin-top: clamp(4rem, 7vw, 7rem); padding-block: 1.35rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
 .heritage__record span { color: #9a6f35; font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
 .heritage__record strong { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; font-weight: 500; line-height: 1.25; }
+.heritage__record small, .record-columns h4 small { display: block; margin-top: .45rem; color: var(--muted); font-family: 'Libre Baskerville', Georgia, serif; font-size: .52rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
 .heritage__record p { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.6; }
 
 .city-story { display: grid; grid-template-columns: 1.45fr .75fr; gap: clamp(3rem, 7vw, 8rem); align-items: center; padding-block: clamp(2rem, 5vw, 5rem) clamp(8rem, 14vw, 15rem); }
@@ -124,17 +125,49 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .reference-block__heading h3 { max-width: 26rem; margin: 0; font-size: clamp(2.6rem, 4.2vw, 4.8rem); }
 .reference-block__content { min-width: 0; }
 .reference-lede { max-width: 58rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.5rem, 2.2vw, 2.25rem); line-height: 1.3; }
-.reference-note { color: var(--muted); font-size: .74rem; line-height: 1.65; }
-.system-plate { margin: clamp(3rem, 5vw, 5rem) 0; }
-.system-plate picture { aspect-ratio: 3 / 2; overflow: hidden; background: #f3ecdf; }
-.system-plate figcaption { display: grid; grid-template-columns: minmax(12rem, .7fr) 1.3fr; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--ink); }
+.reference-note { color: #555e62; font-size: .82rem; line-height: 1.65; }
+.system-diagrams { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(17rem, .75fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; margin: clamp(3rem, 5vw, 5rem) 0; }
+.system-plate { min-width: 0; margin: 0; }
+.orbit-plate { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--ivory); }
+.orbit-plate__system { position: absolute; inset: 0; }
+.planetary-orbit, .stellar-orbit, .binary-orbit { position: absolute; left: 28%; top: 52%; aspect-ratio: 1; border: 1px solid rgba(23,33,43,.34); border-radius: 50%; }
+.planetary-orbit > span, .stellar-orbit > span, .moon-orbit > span { position: absolute; right: 0; top: 50%; transform: translate(50%, -50%); }
+.binary-orbit { width: 9%; transform: translate(-50%, -50%); border-color: rgba(200,169,107,.75); border-style: dashed; }
+.planetary-orbit--i { width: 16%; transform: translate(-50%, -50%) rotate(-34deg); }
+.planetary-orbit--ii { width: 23%; transform: translate(-50%, -50%) rotate(142deg); }
+.planetary-orbit--iii { width: 30%; transform: translate(-50%, -50%) rotate(58deg); }
+.planetary-orbit--iv { width: 38%; transform: translate(-50%, -50%) rotate(17deg); border-color: rgba(200,169,107,.92); }
+.stellar-orbit { width: 132%; height: 95%; aspect-ratio: auto; transform: translate(-50%, -50%) rotate(-11deg); border-color: rgba(23,33,43,.75); border-style: dotted; }
+.star, .planet, .moon { display: block; border-radius: 50%; box-shadow: inset -.18em -.2em .3em rgba(10,17,28,.2); }
+.star--a { position: absolute; left: 26%; top: 52%; width: 4.8%; aspect-ratio: 1; transform: translate(-50%, -50%); background: radial-gradient(circle at 38% 35%, #ffd58a, var(--tangerine, #e87532) 55%, #b74f1f); box-shadow: 0 0 0 1px #b75f2b, 0 0 2rem rgba(232,117,50,.28); }
+.star--b { position: absolute; left: 30.5%; top: 52%; width: 2.8%; aspect-ratio: 1; transform: translate(-50%, -50%); background: radial-gradient(circle at 35% 35%, #ffc27b, #d96f37 60%, #8c3827); }
+.star--c { position: absolute; left: 77%; top: 23%; width: clamp(1rem, 2vw, 1.6rem); aspect-ratio: 1; transform: translate(-50%, -50%); border: 1px solid #733026; background: radial-gradient(circle at 35% 32%, #f0a06d, #b84c35 52%, #6f2824 100%); box-shadow: inset -.18em -.2em .3em rgba(10,17,28,.24), 0 0 0 .22rem var(--ivory), 0 0 1.2rem rgba(159,64,47,.58); }
+.system-planet { display: block; aspect-ratio: 1; border: 1px solid rgba(23,33,43,.55); border-radius: 50%; background: #aa9171; }
+.system-planet--i { width: clamp(.32rem, .65vw, .58rem); background: #a66d4a; }
+.system-planet--ii { width: clamp(.4rem, .8vw, .68rem); background: #c4ad78; }
+.system-planet--iii { width: clamp(.38rem, .72vw, .62rem); background: #8f7862; }
+.system-planet--iv { width: clamp(.4rem, .75vw, .64rem); border-color: var(--navy); background: #496777; box-shadow: 0 0 0 .14rem var(--ivory), 0 0 0 .2rem rgba(200,169,107,.85); }
+.lunar-plate { position: relative; aspect-ratio: 1; overflow: hidden; background: var(--ivory); }
+.moon-system { position: absolute; inset: 4%; border: 1px solid rgba(200,169,107,.8); border-radius: 50%; background: var(--ivory); }
+.moon-orbit { position: absolute; left: 50%; top: 50%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; }
+.moon-orbit--clotho { width: 43%; transform: translate(-50%, -50%) rotate(142deg); border-color: rgba(200,169,107,.9); }
+.moon-orbit--lachesis { width: 66%; transform: translate(-50%, -50%) rotate(-18deg); border-color: rgba(23,33,43,.62); border-style: dashed; }
+.moon-orbit--atropos { width: 89%; transform: translate(-50%, -50%) rotate(224deg); border-color: rgba(23,33,43,.78); border-style: dotted; }
+.planet--inset { position: absolute; left: 50%; top: 50%; width: 17%; aspect-ratio: 1; transform: translate(-50%, -50%); border: 1px solid var(--navy); background: radial-gradient(circle at 35% 30%, #c5d1b6, #526f7a 48%, #17212b); }
+.moon { aspect-ratio: 1; border: 1px solid rgba(23,33,43,.55); background: #d4c5a5; }
+.moon--clotho { width: clamp(.65rem, 1.6vw, 1.3rem); }
+.moon--lachesis { width: clamp(.55rem, 1.3vw, 1.05rem); background: #aab9a7; }
+.moon--atropos { width: clamp(.45rem, 1vw, .85rem); background: #b7a17e; }
+.system-plate figcaption { display: block; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--ink); }
 .system-plate figcaption span { color: var(--ink); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
-.system-plate figcaption p { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.55; }
+.system-plate figcaption p { margin: .75rem 0 0; color: var(--muted); font-size: .75rem; line-height: 1.55; }
 .stellar-census { display: grid; grid-template-columns: repeat(3, 1fr); margin: clamp(3rem, 5vw, 5rem) 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
 .stellar-census section { padding: 1.5rem clamp(1rem, 2.5vw, 2.5rem) 1.75rem 0; }
 .stellar-census section + section { padding-left: clamp(1rem, 2.5vw, 2.5rem); border-left: 1px solid var(--line); }
 .stellar-census span, .authority-label { color: #9a6f35; font-size: .6rem; letter-spacing: .13em; text-transform: uppercase; }
-.stellar-census h4, .record-columns h4 { margin: .75rem 0 .5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.45rem, 2vw, 2rem); font-weight: 500; line-height: 1.1; }
+.stellar-census h4, .record-columns h4 { margin: .75rem 0 .5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; line-height: 1.1; }
+.stellar-census h4 { font-size: clamp(1.25rem, 1.65vw, 1.7rem); }
+.record-columns h4 { font-size: clamp(1.45rem, 2vw, 2rem); }
 .stellar-census p { margin: 0; color: var(--muted); font-size: .7rem; line-height: 1.55; }
 .reference-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 2rem; margin: 0 0 3rem; }
 .reference-metrics div { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
@@ -147,7 +180,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .fates-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
 .fates-list strong { color: var(--ink); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
 .fates-list span { min-width: 0; color: var(--muted); font-size: .7rem; text-transform: none; letter-spacing: 0; }
-.editorial-list li { position: relative; padding: .8rem 0 .8rem 1.35rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .74rem; line-height: 1.55; }
+.editorial-list li { position: relative; padding: .85rem 0 .85rem 1.35rem; border-bottom: 1px solid var(--line); color: #465057; font-size: .9rem; line-height: 1.55; }
 .editorial-list li::before { content: '—'; position: absolute; left: 0; color: #9a6f35; }
 .authority-label { margin-bottom: .5rem; }
 .reference-block--station { border-bottom: 1px solid var(--ink); }
@@ -187,6 +220,11 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .reference-block__heading h3 { max-width: 36rem; }
   .reference-metrics { grid-template-columns: repeat(2, 1fr); }
   .system-plate figcaption { grid-template-columns: 1fr; gap: .35rem; }
+  .moon-system { right: 1%; bottom: 4%; width: 39%; }
+}
+
+@media (min-width: 901px) {
+  .stellar-census h4 { white-space: nowrap; }
 }
 
 @media (min-width: 901px) {
@@ -206,6 +244,8 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .stellar-census section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .reference-metrics { grid-template-columns: 1fr; }
   .fates-list li { grid-template-columns: 1fr; gap: .25rem; }
+  .system-diagrams { grid-template-columns: 1fr; }
+  .system-plate--lunar { max-width: 28rem; }
   .introduction h2, .section-heading h2, .city-story h2, .landscape h2, .orbital h2 { font-size: 2.8rem; }
   .night-transit > .image-figure picture, .landscape .image-figure picture { aspect-ratio: 4 / 3; }
 }
