@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import ImageFigure from '../components/ImageFigure.astro';
 import AdaptivePicture from '../components/AdaptivePicture.astro';
 import OrbitalDiagram from '../components/OrbitalDiagram.astro';
+import SiteModals from '../components/SiteModals.astro';
 ---
 
 <BaseLayout>
@@ -324,11 +325,13 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
         <p class="footer-department">Department of Planetary Affairs</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#world">About the Project</a>
-        <a href="#disclaimer">Disclaimer</a>
+        <a href="#about-the-project" aria-haspopup="dialog">About the Project</a>
+        <a href="#disclaimer" aria-haspopup="dialog">Disclaimer</a>
         <a href="mailto:info@queenstriad.org">Contact</a>
       </nav>
-      <p class="footer-copyright" id="disclaimer">© 2026 Matthew McClendon. All rights reserved.</p>
+      <p class="footer-copyright">© 2026 Matthew McClendon. All rights reserved.</p>
     </div>
   </footer>
+
+  <SiteModals />
 </BaseLayout>

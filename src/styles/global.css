@@ -13,6 +13,7 @@
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; background: var(--ivory); }
+html.modal-open { overflow: hidden; }
 
 body {
   margin: 0;

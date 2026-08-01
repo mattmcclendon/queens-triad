@@ -1,0 +1,92 @@
+<div class="overlay-panel" id="about-the-project" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-hidden="true">
+  <div class="overlay-card" tabindex="-1">
+    <a href="#" class="overlay-close" data-modal-close aria-label="Close about the project">Close</a>
+    <h2 id="about-title">About the Project</h2>
+    <p>Queen’s Triad is a speculative planetary archive set on Maia IV, a fictional Federation world. It uses narrative distance to explore healing, adaptation, identity, xenoanthropology, personal growth, and life beyond scarcity.</p>
+    <p>The project expands the speculative worldbuilding of <a href="https://usskepler.org">USS Kepler</a> and sits alongside the civic thought experiments of <a href="https://aureliareach.org">Aurelia Reach</a> and the essays published through <a href="https://www.amidthenoise.com">Amid the Noise</a>. Queen’s Triad is not an escape from human experience. It is a place to consider what becoming means when survival is no longer the work.</p>
+    <p>Responses, questions, and better frames are welcome at <a href="mailto:info@queenstriad.org?subject=Queen%E2%80%99s%20Triad%20Project">info@queenstriad.org</a>.</p>
+  </div>
+</div>
+
+<div class="overlay-panel" id="disclaimer" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title" aria-hidden="true">
+  <div class="overlay-card" tabindex="-1">
+    <a href="#" class="overlay-close" data-modal-close aria-label="Close disclaimer">Close</a>
+    <h2 id="disclaimer-title">Disclaimer</h2>
+    <p>Queen’s Triad is an independent, non-commercial speculative archive and fictional worldbuilding project created by Matthew McClendon.</p>
+    <p>This project is inspired by the humanist and exploratory traditions of science fiction. Star Trek and all related names, marks, concepts, and intellectual property belong to Paramount Global and their respective rights holders. No affiliation, endorsement, or infringement is intended.</p>
+    <p>References to the United Federation of Planets, Starfleet, planetary affairs, Federation worlds, and related fictional institutions are used as part of the project’s speculative framework.</p>
+  </div>
+</div>
+
+<script>
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('.overlay-panel'));
+  const triggers = Array.from(document.querySelectorAll<HTMLElement>('[aria-haspopup="dialog"]'));
+  let returnTarget: HTMLElement | null = null;
+
+  const activePanel = () => panels.find((panel) => `#${panel.id}` === window.location.hash);
+
+  const syncPanels = () => {
+    const active = activePanel();
+    panels.forEach((panel) => panel.setAttribute('aria-hidden', panel === active ? 'false' : 'true'));
+    document.documentElement.classList.toggle('modal-open', Boolean(active));
+    if (active) requestAnimationFrame(() => active.querySelector<HTMLElement>('.overlay-card')?.focus());
+  };
+
+  const closePanel = () => {
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    syncPanels();
+    returnTarget?.focus();
+  };
+
+  triggers.forEach((trigger) => trigger.addEventListener('click', () => { returnTarget = trigger; }));
+  panels.forEach((panel) => {
+    panel.addEventListener('click', (event) => { if (event.target === panel) closePanel(); });
+    panel.querySelector('[data-modal-close]')?.addEventListener('click', (event) => {
+      event.preventDefault();
+      closePanel();
+    });
+  });
+
+  window.addEventListener('hashchange', syncPanels);
+  document.addEventListener('keydown', (event) => {
+    const active = activePanel();
+    if (!active) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closePanel();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(active.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  syncPanels();
+</script>
+
+<style>
+  .overlay-panel { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 2rem; }
+  .overlay-panel[aria-hidden="false"] { display: flex; }
+  .overlay-card { position: relative; z-index: 1; box-sizing: border-box; width: min(680px, 100%); max-height: min(78vh, 720px); overflow: auto; padding: 2.5rem 2.75rem 2.75rem; border-top: 4px solid #b48a4a; background: var(--ivory); box-shadow: 0 30px 90px rgba(8, 17, 29, .46); color: var(--navy); outline: none; }
+  .overlay-card h2 { margin: 0 0 1.25rem; color: var(--navy); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.1rem, 5vw, 3.25rem); font-weight: 500; line-height: 1; }
+  .overlay-card p { margin: 0; font-size: .98rem; line-height: 1.8; text-wrap: pretty; }
+  .overlay-card p + p { margin-top: 1.15rem; }
+  .overlay-card a:not(.overlay-close) { color: var(--navy); text-decoration: underline 1px; text-underline-offset: .16em; }
+  .overlay-card a:not(.overlay-close):hover { color: #b0602d; text-decoration-thickness: 2px; }
+  .overlay-close { position: absolute; top: 1.1rem; right: 1.25rem; color: var(--navy); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-decoration: underline; text-transform: uppercase; text-underline-offset: .16em; }
+  .overlay-close:hover { color: #b0602d; }
+
+  @media (max-width: 760px) {
+    .overlay-panel { align-items: flex-end; padding: 1.25rem; }
+    .overlay-card { max-height: 82vh; padding: 2.35rem 1.5rem 1.75rem; }
+  }
+</style>
