@@ -29,6 +29,10 @@ picture { display: block; }
 .image-placeholder { display: grid; place-items: center; width: 100%; height: 100%; min-height: 18rem; background: linear-gradient(145deg, #d9c8ae, #a6b2a1); color: rgba(23,33,43,.65); }
 .image-placeholder span { font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
 a { color: inherit; }
+.archive-paths { display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; margin-top: 1.5rem; }
+.archive-paths--compact { margin-top: .9rem; }
+.archive-link { color: #8d652e; font-size: .61rem; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; border-bottom: 1px solid rgba(141,101,46,.42); transition: color .2s ease, border-color .2s ease; }
+.archive-link:hover, .archive-link:focus-visible { color: var(--ink); border-color: var(--ink); }
 h1, h2, h3, p { margin-top: 0; }
 h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; line-height: .98; }
 
@@ -84,6 +88,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .heritage__record strong { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; font-weight: 500; line-height: 1.25; }
 .heritage__record small, .record-columns h4 small { display: block; margin-top: .45rem; color: var(--muted); font-family: 'Libre Baskerville', Georgia, serif; font-size: .52rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
 .heritage__record p { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.6; }
+.heritage__record .archive-link { font-size: .56rem; }
 
 .city-story { display: grid; grid-template-columns: 1.45fr .75fr; gap: clamp(3rem, 7vw, 8rem); align-items: center; padding-block: clamp(2rem, 5vw, 5rem) clamp(8rem, 14vw, 15rem); }
 .city-story .image-figure picture { aspect-ratio: 3 / 2; }
@@ -122,6 +127,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .planetary-record__summary dt, .reference-list dt, .reference-metrics dt { color: #9a6f35; font-size: .59rem; letter-spacing: .13em; text-transform: uppercase; }
 .planetary-record__summary dd { margin: .25rem 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.3rem, 1.7vw, 1.7rem); line-height: 1.2; }
 .reference-block { display: grid; grid-template-columns: .55fr 1.45fr; gap: clamp(3rem, 8vw, 9rem); padding-block: clamp(4.5rem, 8vw, 8rem); border-top: 1px solid var(--line); }
+.reference-block[id] { scroll-margin-top: 2rem; }
 .reference-block__heading h3 { max-width: 26rem; margin: 0; font-size: clamp(2.6rem, 4.2vw, 4.8rem); }
 .reference-block__content { min-width: 0; }
 .reference-lede { max-width: 58rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.5rem, 2.2vw, 2.25rem); line-height: 1.3; }
@@ -172,6 +178,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .reference-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 2rem; margin: 0 0 3rem; }
 .reference-metrics div { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .reference-metrics dd, .reference-list dd { margin: .2rem 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; line-height: 1.25; }
+.population-register dd { font-size: clamp(1.25rem, 1.7vw, 1.65rem); }
 .record-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(3rem, 7vw, 7rem); }
 .record-columns > div > p:not(.reference-lede, .reference-note, .authority-label) { color: var(--muted); }
 .reference-list { margin: 0 0 2.5rem; }

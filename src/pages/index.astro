@@ -22,6 +22,10 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
         <h2 id="world-title">A world beyond survival.</h2>
         <p class="lede">Maia IV orbits within the stable Maia trinary system—a low-gravity world, slightly larger than Earth, with tangerine skies, pale celadon clouds, native photosynthetic aeroplankton, and fungal forests built to an extraordinary scale.</p>
         <p>Nearly the entire permanent population lives at Maia Station, whose civic and medical districts hold 1.0 g. Beyond its cultivated perimeter, much of the planet remains protected for ecological study, archaeology, and xenoanthropology.</p>
+        <nav class="archive-paths" aria-label="Related planetary records">
+          <a class="archive-link" href="#planetary-profile">Planetary profile ↘</a>
+          <a class="archive-link" href="#human-presence">Population register ↘</a>
+        </nav>
         <p class="world-maxim">The Queens are felt through light.<br />The Fates are seen in darkness.</p>
       </div>
     </section>
@@ -40,7 +44,13 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
         <aside class="heritage__record" aria-label="Planetary protection record">
           <span>Protection authority</span>
           <strong>Federation Bureau of Planetary Heritage</strong>
-          <p>Ecological preserves, archaeological landscapes, and intact cultural sites beyond Maia Station are held under protected status.</p>
+          <div>
+            <p>Ecological preserves, archaeological landscapes, and intact cultural sites beyond Maia Station are held under protected status.</p>
+            <nav class="archive-paths archive-paths--compact" aria-label="Related heritage records">
+              <a class="archive-link" href="#cultural-record">Cultural record ↘</a>
+              <a class="archive-link" href="#protected-status">Protected status ↘</a>
+            </nav>
+          </div>
         </aside>
       </div>
     </section>
@@ -57,6 +67,9 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
         <p class="kicker">Ordinary life</p>
         <h2 id="station-title">Maia Station is not a retreat from the world.</h2>
         <p>It is the planet’s only major population center: residents, clinicians, schools, research teams, cafés, visitors, and people who arrived for six weeks and stayed twelve years.</p>
+        <nav class="archive-paths" aria-label="Related Maia Station record">
+          <a class="archive-link" href="#human-presence">Maia Station record ↘</a>
+        </nav>
         <dl class="facts">
           <div><dt>Station gravity</dt><dd>1.0 g</dd></div>
           <div><dt>Native gravity</dt><dd>0.8 g</dd></div>
@@ -71,7 +84,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           <p class="kicker">Beyond the station</p>
           <h2 id="landscape-title">The cultivated edge.</h2>
         </div>
-        <p>Maglev lines leave Maia Station for agricultural belts, research preserves, and the planet’s native 0.8-g wilderness.</p>
+        <p>Maglev lines leave Maia Station for agricultural belts, research preserves, and the planet’s native-gravity wilderness.</p>
       </div>
       <figure class="image-figure adaptive-figure">
         <AdaptivePicture
@@ -106,11 +119,11 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
         <p class="kicker">Planetary context</p>
         <h2 id="orbital-title">Maia IV</h2>
         <p>The Queens rule the system.<br />The Fates circle the world.</p>
-        <ul>
-          <li><span>Clotho</span> Beginning and emergence</li>
-          <li><span>Lachesis</span> Measure and choice</li>
-          <li><span>Atropos</span> Ending and transformation</li>
-        </ul>
+        <p>Three natural satellites preserve the oldest names in the planetary record.</p>
+        <nav class="archive-paths" aria-label="Related orbital records">
+          <a class="archive-link" href="#stellar-system">Stellar architecture ↘</a>
+          <a class="archive-link" href="#natural-history">Satellite record ↘</a>
+        </nav>
       </div>
       <ImageFigure
         name="qt-orbit-001"
@@ -130,7 +143,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           <div><dt>Primary settlement</dt><dd>Maia Station</dd></div>
         </dl>
 
-        <article class="reference-block">
+        <article class="reference-block" id="stellar-system">
           <header class="reference-block__heading">
             <p class="kicker">01 · Stellar system</p>
             <h3>The Queens</h3>
@@ -164,7 +177,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           </div>
         </article>
 
-        <article class="reference-block">
+        <article class="reference-block" id="planetary-profile">
           <header class="reference-block__heading">
             <p class="kicker">02 · Planetary profile</p>
             <h3>A lighter world</h3>
@@ -188,7 +201,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           </div>
         </article>
 
-        <article class="reference-block">
+        <article class="reference-block" id="natural-history">
           <header class="reference-block__heading">
             <p class="kicker">03 · Natural history</p>
             <h3>The Fates and the living world</h3>
@@ -215,7 +228,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           </div>
         </article>
 
-        <article class="reference-block">
+        <article class="reference-block" id="cultural-record">
           <header class="reference-block__heading">
             <p class="kicker">04 · Cultural record</p>
             <h3>The civilization before Humanity</h3>
@@ -240,7 +253,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           </div>
         </article>
 
-        <article class="reference-block">
+        <article class="reference-block" id="protected-status">
           <header class="reference-block__heading">
             <p class="kicker">05 · Protected status</p>
             <h3>A world held in trust</h3>
@@ -249,7 +262,7 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
             <div>
               <p class="authority-label">Protection authority</p>
               <h4>Federation Bureau of Planetary Heritage</h4>
-              <p>Most of Maia IV is protected. Permanent settlement outside designated zones is prohibited, leaving Maia Station as the planet’s only substantial population center.</p>
+              <p>Most of Maia IV is protected. Permanent settlement outside designated zones is prohibited.</p>
               <p>Sixty-three agricultural and archaeological field stations support cultivation, conservation, and xenoanthropology within limited research and transit corridors.</p>
             </div>
             <div>
@@ -265,23 +278,32 @@ import OrbitalDiagram from '../components/OrbitalDiagram.astro';
           </div>
         </article>
 
-        <article class="reference-block reference-block--station">
+        <article class="reference-block reference-block--station" id="human-presence">
           <header class="reference-block__heading">
             <p class="kicker">06 · Human presence</p>
             <h3>Maia Station</h3>
           </header>
-          <div class="reference-block__content record-columns">
-            <div>
-              <dl class="reference-list">
-                <div><dt>Habitat gravity</dt><dd>1.0 g</dd></div>
-                <div><dt>Function</dt><dd>Settlement, medical center, research community, and cultural gateway</dd></div>
-                <div><dt>Specialties</dt><dd>Adaptive-gravity medicine, physical rehabilitation, and long-term recovery</dd></div>
-                <div><dt>Society</dt><dd>Federation post-scarcity</dd></div>
-              </dl>
-            </div>
-            <div>
-              <p class="reference-lede">Maia Station helps people adapt between different gravitational environments and serves patients recovering from injury, illness, bodily transition, and extended residence on low- or high-gravity worlds.</p>
-              <p>Over time, the station also became associated with reflection, reinvention, and personal growth.</p>
+          <div class="reference-block__content">
+            <dl class="reference-metrics population-register" aria-label="Maia IV permanent population">
+              <div><dt>Permanent population</dt><dd>243,000</dd></div>
+              <div><dt>Maia Station</dt><dd>241,500</dd></div>
+              <div><dt>Field stations</dt><dd>1,494 · 63 stations</dd></div>
+              <div><dt>Starfleet communications</dt><dd>6 · 3 stations</dd></div>
+            </dl>
+            <div class="record-columns">
+              <div>
+                <dl class="reference-list">
+                  <div><dt>Habitat gravity</dt><dd>1.0 g</dd></div>
+                  <div><dt>Function</dt><dd>Settlement, medical center, research community, and cultural gateway</dd></div>
+                  <div><dt>Specialties</dt><dd>Adaptive-gravity medicine, physical rehabilitation, and long-term recovery</dd></div>
+                  <div><dt>Society</dt><dd>Federation post-scarcity</dd></div>
+                </dl>
+              </div>
+              <div>
+                <p class="reference-lede">Maia Station helps people adapt between different gravitational environments and serves patients recovering from injury, illness, bodily transition, and extended residence on low- or high-gravity worlds.</p>
+                <p>Medical cohorts, visiting specialists, research teams, and other temporary residents typically raise the population present on Maia IV to between 265,000 and 280,000.</p>
+                <p>Over time, the station also became associated with reflection, reinvention, and personal growth.</p>
+              </div>
             </div>
           </div>
         </article>
