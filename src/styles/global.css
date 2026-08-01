@@ -178,6 +178,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .reference-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 2rem; margin: 0 0 3rem; }
 .reference-metrics div { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
 .reference-metrics dd, .reference-list dd { margin: .2rem 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; line-height: 1.25; }
+.population-register { grid-template-columns: repeat(3, 1fr); }
 .population-register dd { font-size: clamp(1.25rem, 1.7vw, 1.65rem); }
 .record-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(3rem, 7vw, 7rem); }
 .record-columns > div > p:not(.reference-lede, .reference-note, .authority-label) { color: var(--muted); }
