@@ -115,6 +115,43 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .orbital li { padding: .9rem 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .7rem; }
 .orbital li span { display: inline-block; min-width: 7rem; color: var(--ink); text-transform: uppercase; letter-spacing: .1em; }
 
+.planetary-record { grid-column: 1 / -1; margin-top: clamp(4rem, 8vw, 8rem); border-top: 1px solid var(--ink); }
+.planetary-record__summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(2rem, 4vw, 5rem); margin: 0; padding-block: 1rem clamp(4rem, 7vw, 7rem); }
+.planetary-record__summary div { padding: 1rem 0 1.25rem; border-bottom: 1px solid var(--line); }
+.planetary-record__summary dt, .reference-list dt, .reference-metrics dt { color: #9a6f35; font-size: .59rem; letter-spacing: .13em; text-transform: uppercase; }
+.planetary-record__summary dd { margin: .25rem 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.3rem, 1.7vw, 1.7rem); line-height: 1.2; }
+.reference-block { display: grid; grid-template-columns: .55fr 1.45fr; gap: clamp(3rem, 8vw, 9rem); padding-block: clamp(4.5rem, 8vw, 8rem); border-top: 1px solid var(--line); }
+.reference-block__heading h3 { max-width: 26rem; margin: 0; font-size: clamp(2.6rem, 4.2vw, 4.8rem); }
+.reference-block__content { min-width: 0; }
+.reference-lede { max-width: 58rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.5rem, 2.2vw, 2.25rem); line-height: 1.3; }
+.reference-note { color: var(--muted); font-size: .74rem; line-height: 1.65; }
+.system-plate { margin: clamp(3rem, 5vw, 5rem) 0; }
+.system-plate picture { aspect-ratio: 3 / 2; overflow: hidden; background: #f3ecdf; }
+.system-plate figcaption { display: grid; grid-template-columns: minmax(12rem, .7fr) 1.3fr; gap: 2rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--ink); }
+.system-plate figcaption span { color: var(--ink); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
+.system-plate figcaption p { margin: 0; color: var(--muted); font-size: .68rem; line-height: 1.55; }
+.stellar-census { display: grid; grid-template-columns: repeat(3, 1fr); margin: clamp(3rem, 5vw, 5rem) 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.stellar-census section { padding: 1.5rem clamp(1rem, 2.5vw, 2.5rem) 1.75rem 0; }
+.stellar-census section + section { padding-left: clamp(1rem, 2.5vw, 2.5rem); border-left: 1px solid var(--line); }
+.stellar-census span, .authority-label { color: #9a6f35; font-size: .6rem; letter-spacing: .13em; text-transform: uppercase; }
+.stellar-census h4, .record-columns h4 { margin: .75rem 0 .5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.45rem, 2vw, 2rem); font-weight: 500; line-height: 1.1; }
+.stellar-census p { margin: 0; color: var(--muted); font-size: .7rem; line-height: 1.55; }
+.reference-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem 2rem; margin: 0 0 3rem; }
+.reference-metrics div { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.reference-metrics dd, .reference-list dd { margin: .2rem 0 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; line-height: 1.25; }
+.record-columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(3rem, 7vw, 7rem); }
+.record-columns > div > p:not(.reference-lede, .reference-note, .authority-label) { color: var(--muted); }
+.reference-list { margin: 0 0 2.5rem; }
+.reference-list div { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+.fates-list, .editorial-list { list-style: none; margin: 1.5rem 0 2.5rem; padding: 0; border-top: 1px solid var(--line); }
+.fates-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
+.fates-list strong { color: var(--ink); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+.fates-list span { min-width: 0; color: var(--muted); font-size: .7rem; text-transform: none; letter-spacing: 0; }
+.editorial-list li { position: relative; padding: .8rem 0 .8rem 1.35rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .74rem; line-height: 1.55; }
+.editorial-list li::before { content: '—'; position: absolute; left: 0; color: #9a6f35; }
+.authority-label { margin-bottom: .5rem; }
+.reference-block--station { border-bottom: 1px solid var(--ink); }
+
 .closing { padding-block: clamp(7rem, 12vw, 12rem); border-top: 1px solid var(--line); text-align: center; }
 .closing p { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.2rem, 3vw, 3.6rem); line-height: 1.1; }
 .closing p + p { color: #9a6f35; font-style: italic; }
@@ -145,6 +182,11 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .pathways { grid-template-columns: 1fr; }
   .pathways article, .pathways article + article { padding: 1.75rem 0; border-left: 0; border-bottom: 1px solid rgba(248,247,244,.3); }
   .orbital__copy { max-width: 34rem; }
+  .planetary-record { grid-column: 1; }
+  .reference-block { grid-template-columns: 1fr; gap: 2.5rem; }
+  .reference-block__heading h3 { max-width: 36rem; }
+  .reference-metrics { grid-template-columns: repeat(2, 1fr); }
+  .system-plate figcaption { grid-template-columns: 1fr; gap: .35rem; }
 }
 
 @media (min-width: 901px) {
@@ -160,6 +202,10 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .footer-links { flex-wrap: wrap; gap: .75rem 1.25rem; }
   .introduction__meta { grid-template-columns: 1fr; gap: 0; }
   .heritage__columns, .heritage__record { grid-template-columns: 1fr; }
+  .planetary-record__summary, .stellar-census, .record-columns { grid-template-columns: 1fr; }
+  .stellar-census section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+  .reference-metrics { grid-template-columns: 1fr; }
+  .fates-list li { grid-template-columns: 1fr; gap: .25rem; }
   .introduction h2, .section-heading h2, .city-story h2, .landscape h2, .orbital h2 { font-size: 2.8rem; }
   .night-transit > .image-figure picture, .landscape .image-figure picture { aspect-ratio: 4 / 3; }
 }
