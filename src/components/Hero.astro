@@ -1,0 +1,24 @@
+---
+import AdaptivePicture from './AdaptivePicture.astro';
+---
+
+<header class="hero" id="top">
+  <AdaptivePicture
+    variants={[
+      { key: 'day', name: 'qt-station-day' },
+      { key: 'storm', name: 'qt-station-storm' },
+      { key: 'night', name: 'qt-station-night' },
+    ]}
+    alt="Maia Station as its sky changes across day, storm, and night"
+    class="hero__picture"
+    loading="eager"
+    fetchpriority="high"
+    scheme="station"
+  />
+  <div class="hero__veil"></div>
+  <div class="hero__content">
+    <h1>Queen’s Triad</h1>
+    <div class="hero__rule" aria-hidden="true"><span>✦</span></div>
+  </div>
+  <a class="hero__enter" href="#world">Explore Maia IV <span aria-hidden="true">↘</span></a>
+</header>

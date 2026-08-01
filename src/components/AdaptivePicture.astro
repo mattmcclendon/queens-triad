@@ -1,0 +1,81 @@
+---
+import Picture from './Picture.astro';
+
+interface Variant {
+  key: 'day' | 'storm' | 'night';
+  name: string;
+}
+
+interface Props {
+  variants: Variant[];
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+  scheme?: 'station' | 'day-night';
+}
+
+const {
+  variants,
+  alt,
+  class: className,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  sizes = '100vw',
+  scheme = 'day-night',
+} = Astro.props;
+---
+
+<div class:list={['adaptive-picture', className]} data-adaptive-picture data-scheme={scheme} data-scene="day">
+  {variants.map((variant) => (
+    <div class="adaptive-picture__layer" data-scene-key={variant.key}>
+      <Picture
+        name={variant.name}
+        {alt}
+        class="adaptive-picture__variant"
+        {loading}
+        {fetchpriority}
+        {sizes}
+      />
+    </div>
+  ))}
+</div>
+
+<script is:inline>
+  (() => {
+    if (window.__qtAdaptiveScenes) return;
+    window.__qtAdaptiveScenes = true;
+
+    const selectScene = (scheme, hour) => {
+      if (scheme === 'station') {
+        if (hour >= 6 && hour < 17) return 'day';
+        if (hour >= 17 && hour < 20) return 'storm';
+        return 'night';
+      }
+      return hour >= 6 && hour < 20 ? 'day' : 'night';
+    };
+
+    const updateScenes = () => {
+      const requested = new URLSearchParams(window.location.search).get('scene');
+      const hour = new Date().getHours();
+      document.querySelectorAll('[data-adaptive-picture]').forEach((element) => {
+        const available = [...element.querySelectorAll('[data-scene-key]')].map((layer) => layer.dataset.sceneKey);
+        const automatic = selectScene(element.dataset.scheme, hour);
+        element.dataset.scene = requested && available.includes(requested) ? requested : automatic;
+      });
+    };
+
+    const start = () => {
+      updateScenes();
+      window.setInterval(updateScenes, 60_000);
+      document.addEventListener('visibilitychange', () => !document.hidden && updateScenes());
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', start, { once: true });
+    } else {
+      start();
+    }
+  })();
+</script>

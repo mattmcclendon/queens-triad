@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ImageFigure from '../components/ImageFigure.astro';
+import AdaptivePicture from '../components/AdaptivePicture.astro';
+---
+
+<BaseLayout>
+  <Hero />
+
+  <main>
+    <section class="introduction page-gutter" id="world" aria-labelledby="world-title">
+      <div class="introduction__meta">
+        <p>Maia System</p>
+        <p>Class-M · 0.8 g</p>
+        <p>Slightly larger than Earth</p>
+        <p>Primary settlement · Maia Station</p>
+      </div>
+      <div class="introduction__copy">
+        <p class="kicker">The world in one breath</p>
+        <h2 id="world-title">A world beyond survival.</h2>
+        <p class="lede">Maia IV orbits within the stable Maia trinary system—a low-gravity world, slightly larger than Earth, with tangerine skies, pale celadon clouds, native photosynthetic aeroplankton, and fungal forests built to an extraordinary scale.</p>
+        <p>Nearly the entire permanent population lives at Maia Station, whose civic and medical districts hold 1.0 g. Beyond its cultivated perimeter, much of the planet remains protected for ecological and archaeological study.</p>
+        <p class="world-maxim">The Queens are felt through light.<br />The Fates are seen in darkness.</p>
+      </div>
+    </section>
+
+    <section class="heritage page-gutter" aria-labelledby="heritage-title">
+      <div class="heritage__heading">
+        <p class="kicker">The world before arrival</p>
+        <h2 id="heritage-title">The pattern was already here.</h2>
+      </div>
+      <div class="heritage__body">
+        <p class="heritage__lede">Long before Humanity traveled between stars, Maia IV was home to an advanced civilization organized around a base-3 understanding of mathematics, time, ecology, and meaning.</p>
+        <div class="heritage__columns">
+          <p>The civilization vanished in deep antiquity. Its inscriptions, durable materials, foundations, and protected sites survived in enough detail to reveal a culture shaped by three stars, three moons, and recurring triadic systems.</p>
+          <p>The Fates are not Federation inventions. Their associations with beginning, measure, and ending descend from the world’s surviving record. Their familiar names are Federation Standard renderings of far older ideas.</p>
+        </div>
+        <aside class="heritage__record" aria-label="Planetary protection record">
+          <span>Protection authority</span>
+          <strong>Federation Bureau of Planetary Heritage</strong>
+          <p>Ecological preserves, archaeological landscapes, and intact cultural sites beyond Maia Station are held under protected status.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="city-story page-gutter" aria-labelledby="station-title">
+      <ImageFigure
+        name="qt-life-001"
+        alt="Three Sisters Roasters and the public promenade at Maia Station"
+        label="Maia Station · Civic promenade"
+        caption="Daily life unfolds beneath the Fates, where transit, research, neighborhood life, and a morning at Three Sisters Roasters overlap."
+        sizes="(min-width: 900px) 58vw, 100vw"
+      />
+      <div class="city-story__copy">
+        <p class="kicker">Ordinary life</p>
+        <h2 id="station-title">Maia Station is not a retreat from the world.</h2>
+        <p>It is the planet’s only major population center: residents, clinicians, schools, research teams, cafés, visitors, and people who arrived for six weeks and stayed twelve years.</p>
+        <dl class="facts">
+          <div><dt>Station gravity</dt><dd>1.0 g</dd></div>
+          <div><dt>Native gravity</dt><dd>0.8 g</dd></div>
+          <div><dt>Known for</dt><dd>Adaptive medicine</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="landscape page-gutter" aria-labelledby="landscape-title">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="kicker">Beyond the station</p>
+          <h2 id="landscape-title">The cultivated edge.</h2>
+        </div>
+        <p>Maglev lines leave Maia Station for agricultural belts, research preserves, and the planet’s native 0.8-g wilderness.</p>
+      </div>
+      <figure class="image-figure adaptive-figure">
+        <AdaptivePicture
+          variants={[
+            { key: 'day', name: 'qt-maglev-day' },
+            { key: 'night', name: 'qt-maglev-night' },
+          ]}
+          alt="The maglev route between Maia Station, cultivated land, and the fungal preserves"
+          scheme="day-night"
+        />
+        <figcaption>
+          <span>Lachesis Agricultural Belt</span>
+          <p>The outer maglev crosses the boundary between the station’s controlled gravity and the giant fungal preserves beyond.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="night-transit" aria-labelledby="night-title">
+      <div class="night-transit__statement page-gutter">
+        <p class="kicker">The architecture of self</p>
+        <h2 id="night-title">When survival is no longer the work,<br /> becoming yourself is.</h2>
+        <div class="pathways">
+          <article><span>01</span><h3>Release</h3><p>What no longer needs to be carried.</p></article>
+          <article><span>02</span><h3>Reflection</h3><p>What becomes visible when urgency quiets.</p></article>
+          <article><span>03</span><h3>Renewal</h3><p>What a person chooses to become next.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="orbital page-gutter" aria-labelledby="orbital-title">
+      <div class="orbital__copy">
+        <p class="kicker">Planetary context</p>
+        <h2 id="orbital-title">Maia IV</h2>
+        <p>The Queens rule the system. The Fates circle the world.</p>
+        <ul>
+          <li><span>Clotho</span> Beginning and emergence</li>
+          <li><span>Lachesis</span> Measure and choice</li>
+          <li><span>Atropos</span> Ending and transformation</li>
+        </ul>
+      </div>
+      <ImageFigure
+        name="qt-orbit-001"
+        alt="Maia IV from high orbit with its tangerine atmosphere and celadon weather systems"
+        label="Maia IV · High orbit"
+        caption="A 0.8-g Class-M world in the Maia trinary system."
+        sizes="(min-width: 900px) 66vw, 100vw"
+      />
+    </section>
+
+    <section class="closing page-gutter">
+      <p>Queen’s Triad is not where people go to escape their lives.</p>
+      <p>It is where they learn how to inhabit them.</p>
+      <a href="#top">Return to the light <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-identity">
+        <img src="/images/ufp.png" alt="United Federation of Planets emblem" class="footer-emblem" />
+        <p class="footer-agency">United Federation of Planets</p>
+        <p class="footer-department">Department of Planetary Affairs</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#world">About the Project</a>
+        <a href="#disclaimer">Disclaimer</a>
+        <a href="mailto:info@queenstriad.org">Contact</a>
+      </nav>
+      <p class="footer-copyright" id="disclaimer">© 2026 Matthew McClendon. All rights reserved.</p>
+    </div>
+  </footer>
+</BaseLayout>

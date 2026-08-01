@@ -1,0 +1,22 @@
+---
+import Picture from './Picture.astro';
+
+interface Props {
+  name: string;
+  alt: string;
+  label: string;
+  caption: string;
+  class?: string;
+  sizes?: string;
+}
+
+const { name, alt, label, caption, class: className = '', sizes = '100vw' } = Astro.props;
+---
+
+<figure class:list={['image-figure', className]}>
+  <Picture {name} {alt} {sizes} />
+  <figcaption>
+    <span>{label}</span>
+    <p>{caption}</p>
+  </figcaption>
+</figure>

@@ -1,0 +1,51 @@
+---
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+
+interface Props {
+  name: string;
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  sizes?: string;
+}
+
+const {
+  name,
+  alt,
+  class: className,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  sizes = '100vw',
+} = Astro.props;
+
+const imagePath = resolve('public', 'images', `${name}-1920.webp`);
+const isReady = existsSync(imagePath);
+---
+
+{isReady ? (
+  <picture class={className}>
+    <source
+      type="image/avif"
+      srcset={`/images/${name}-960.avif 960w, /images/${name}-1440.avif 1440w, /images/${name}-1920.avif 1920w`}
+      {sizes}
+    />
+    <source
+      type="image/webp"
+      srcset={`/images/${name}-960.webp 960w, /images/${name}-1440.webp 1440w, /images/${name}-1920.webp 1920w`}
+      {sizes}
+    />
+    <img
+      src={`/images/${name}-1920.webp`}
+      {alt}
+      {loading}
+      {fetchpriority}
+      decoding="async"
+    />
+  </picture>
+) : (
+  <div class:list={['image-placeholder', className]} role="img" aria-label={alt}>
+    <span>{name}</span>
+  </div>
+)}
