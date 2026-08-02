@@ -1,3 +1,26 @@
+<div class="overlay-panel" id="governor-welcome" role="dialog" aria-modal="true" aria-labelledby="governor-welcome-title" aria-hidden="true">
+  <div class="overlay-card overlay-card--letter" tabindex="-1">
+    <a href="#" class="overlay-close" data-modal-close aria-label="Close the governor’s welcome">Close</a>
+    <p class="overlay-eyebrow">Office of Governor Towles</p>
+    <h2 id="governor-welcome-title">Welcome to Maia IV</h2>
+    <div class="governor-letter">
+      <p>Welcome.</p>
+      <p>Whether you have crossed the quadrant for treatment, research, work, or simple curiosity, we are grateful that your journey has brought you here.</p>
+      <p>The Federation is home to nearly one trillion citizens. Maia IV is home to just 243,000. We are a small community entrusted with an ancient world.</p>
+      <p>The civilization that came before us left no living voice, but its evidence remains—in inscriptions, foundations, mathematics, and observations of the natural world. Much of what appears modern here began with something they left behind: a pattern recognized, a principle recovered, or a question we are still learning how to ask.</p>
+      <p>We do not consider ourselves the owners of that legacy. We are its stewards. This belief shapes how we build, how we practice medicine, and how we live beside a history far older than our own.</p>
+      <p>I first came to Maia IV from Alpha Centauri to serve in medicine. I expected my work here to be temporary. Instead, this world became my home, medicine led me into civic service, and its people entrusted me with the privilege of serving as their governor.</p>
+      <p>While you are here, we ask that you share in our stewardship. Please review the current travel advisories before leaving the arrival district. Protected landscapes beyond the marked corridors remain restricted for your safety and for the preservation of sites still under study.</p>
+      <p>Most visitors arrive knowing precisely when they intend to leave. Maia IV has a way of making that date feel provisional.</p>
+      <p>On behalf of my office and the 243,000 citizens who call this world home: welcome to Maia IV.</p>
+      <div class="governor-signature">
+        <img src="/images/savannah-towles.svg" alt="Savannah Towles" />
+        <p>Governor · Maia IV Administration<br /><span>By authority of the Queen’s Triad</span><br /><span class="governor-stardate">Stardate: 79881.279</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="overlay-panel" id="about-the-project" role="dialog" aria-modal="true" aria-labelledby="about-title" aria-hidden="true">
   <div class="overlay-card" tabindex="-1">
     <a href="#" class="overlay-close" data-modal-close aria-label="Close about the project">Close</a>
@@ -77,6 +100,8 @@
   .overlay-panel { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; padding: 2rem; }
   .overlay-panel[aria-hidden="false"] { display: flex; }
   .overlay-card { position: relative; z-index: 1; box-sizing: border-box; width: min(680px, 100%); max-height: min(78vh, 720px); overflow: auto; padding: 2.5rem 2.75rem 2.75rem; border-top: 4px solid #b48a4a; background: var(--ivory); box-shadow: 0 30px 90px rgba(8, 17, 29, .46); color: var(--navy); outline: none; }
+  .overlay-card--letter { width: min(760px, 100%); padding-top: 3.5rem; }
+  .overlay-card .overlay-eyebrow { margin-bottom: .65rem; color: #9a6f35; font-size: .64rem; font-weight: 700; letter-spacing: .18em; line-height: 1.4; text-transform: uppercase; }
   .overlay-card h2 { margin: 0 0 1.25rem; color: var(--navy); font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.1rem, 5vw, 3.25rem); font-weight: 500; line-height: 1; }
   .overlay-card p { margin: 0; font-size: .98rem; line-height: 1.8; text-wrap: pretty; }
   .overlay-card p + p { margin-top: 1.15rem; }
@@ -84,9 +109,18 @@
   .overlay-card a:not(.overlay-close):hover { color: #b0602d; text-decoration-thickness: 2px; }
   .overlay-close { position: absolute; top: 1.1rem; right: 1.25rem; color: var(--navy); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-decoration: underline; text-transform: uppercase; text-underline-offset: .16em; }
   .overlay-close:hover { color: #b0602d; }
+  .governor-letter { padding-top: 2.4rem; }
+  .governor-letter p { font-size: .94rem; line-height: 1.65; }
+  .governor-letter p + p { margin-top: .85rem; }
+  .governor-signature { margin-top: 1.65rem; text-align: center; }
+  .governor-signature img { display: block; width: min(300px, 78%); height: auto; margin: 0 0 3.5rem 20px; }
+  .governor-signature p { color: #8d652e; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; line-height: 1.4; }
+  .governor-signature span { color: var(--muted); font-family: system-ui, sans-serif; font-size: .61rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .governor-signature .governor-stardate { letter-spacing: .08em; text-transform: none; }
 
   @media (max-width: 760px) {
     .overlay-panel { align-items: flex-end; padding: 1.25rem; }
     .overlay-card { max-height: 82vh; padding: 2.35rem 1.5rem 1.75rem; }
+    .overlay-card--letter { padding-top: 3.25rem; }
   }
 </style>

@@ -20,5 +20,9 @@ import AdaptivePicture from './AdaptivePicture.astro';
     <h1>Queen’s Triad</h1>
     <div class="hero__rule" aria-hidden="true"><span>✦</span></div>
   </div>
-  <a class="hero__enter" href="#world">Explore Maia IV <span aria-hidden="true">↘</span></a>
+  <nav class="hero__actions" aria-label="Begin exploring Maia IV">
+    <a href="#governor-welcome" aria-haspopup="dialog">Welcome from the Governor</a>
+    <span class="hero__actions-separator" aria-hidden="true">𐄉</span>
+    <a href="#world">Explore Maia IV <span class="hero__actions-arrow" aria-hidden="true">↘</span></a>
+  </nav>
 </header>
