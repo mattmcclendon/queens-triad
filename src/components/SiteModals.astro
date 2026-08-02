@@ -14,7 +14,8 @@
       <p>Most visitors arrive knowing precisely when they intend to leave. Maia IV has a way of making that date feel provisional.</p>
       <p>On behalf of my office and the 243,000 citizens who call this world home: welcome to Maia IV.</p>
       <div class="governor-signature">
-        <img src="/images/savannah-towles.svg" alt="Savannah Towles" />
+        <img class="governor-signature-mark" src="/images/savannah-towles.svg" alt="Savannah Towles" />
+        <span class="governor-triad-symbol" aria-hidden="true"></span>
         <p>Governor · Maia IV Administration<br /><span>By authority of the Queen’s Triad</span><br /><span class="governor-stardate">Stardate: 79881.279</span></p>
       </div>
     </div>
@@ -110,10 +111,11 @@
   .overlay-close { position: absolute; top: 1.1rem; right: 1.25rem; color: var(--navy); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-decoration: underline; text-transform: uppercase; text-underline-offset: .16em; }
   .overlay-close:hover { color: #b0602d; }
   .governor-letter { padding-top: 2.4rem; }
-  .governor-letter p { font-size: .94rem; line-height: 1.65; }
+  .governor-letter p { font-size: .94rem; line-height: 1.78; }
   .governor-letter p + p { margin-top: .85rem; }
   .governor-signature { margin-top: 1.65rem; text-align: center; }
-  .governor-signature img { display: block; width: min(300px, 78%); height: auto; margin: 0 0 3.5rem 20px; }
+  .governor-signature .governor-signature-mark { display: block; width: min(300px, 78%); height: auto; margin: 0 0 6rem 20px; }
+  .governor-signature .governor-triad-symbol { display: block; width: 38px; height: 29px; margin: 0 auto 20px; background: #8d652e; -webkit-mask: url('/images/queens-triad-symbol.svg') center / contain no-repeat; mask: url('/images/queens-triad-symbol.svg') center / contain no-repeat; }
   .governor-signature p { color: #8d652e; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; line-height: 1.4; }
   .governor-signature span { color: var(--muted); font-family: system-ui, sans-serif; font-size: .61rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
   .governor-signature .governor-stardate { letter-spacing: .08em; text-transform: none; }
