@@ -21,8 +21,8 @@ import SiteModals from '../components/SiteModals.astro';
       <div class="introduction__copy">
         <p class="kicker">The world in one breath</p>
         <h2 id="world-title">A world beyond survival.</h2>
-        <p class="lede">Maia IV orbits within the stable Maia trinary system—a low-gravity world, slightly larger than Earth, with tangerine skies, pale celadon clouds, native photosynthetic aeroplankton, and fungal forests built to an extraordinary scale.</p>
-        <p>Nearly the entire permanent population lives at Maia Station, whose civic and medical districts hold 1.0 g. Beyond its cultivated perimeter, much of the planet remains protected for ecological study, archaeology, and xenoanthropology.</p>
+        <p class="introduction__grounding">Maia IV orbits within the stable Maia trinary system—a low-gravity world, slightly larger than Earth, with tangerine skies, pale celadon clouds, native photosynthetic aeroplankton, and fungal forests built to an extraordinary scale.</p>
+        <p class="introduction__grounding">Nearly the entire permanent population lives at Maia Station, whose civic and medical districts hold 1.0 g. Beyond its cultivated perimeter, much of the planet remains protected for ecological study, archaeology, and xenoanthropology.</p>
         <nav class="archive-paths" aria-label="Related planetary records">
           <a class="archive-link" href="#planetary-profile">Planetary profile ↘</a>
           <a class="archive-link" href="#human-presence">Population register ↘</a>
@@ -42,15 +42,45 @@ import SiteModals from '../components/SiteModals.astro';
           <p>The civilization vanished in deep antiquity. Its inscriptions, durable materials, foundations, and protected sites survived in enough detail to reveal a culture shaped by three stars, three moons, and recurring triadic systems.</p>
           <p>The Fates are not Federation inventions. Their associations with beginning, measure, and ending descend from the world’s surviving record. Their familiar names are Federation Standard renderings of far older ideas.</p>
         </div>
-        <aside class="heritage__record" aria-label="Planetary protection record">
-          <span>Protection authority</span>
-          <strong>Federation Bureau of Planetary Heritage</strong>
-          <div>
-            <p>Ecological preserves, archaeological landscapes, and intact cultural sites beyond Maia Station are held under protected status.</p>
-            <nav class="archive-paths archive-paths--compact" aria-label="Related heritage records">
-              <a class="archive-link" href="#cultural-record">Cultural record ↘</a>
-              <a class="archive-link" href="#protected-status">Protected status ↘</a>
-            </nav>
+        <aside class="founding-records" aria-labelledby="founding-records-title">
+          <div class="founding-records__introduction">
+            <p class="kicker">Founding records</p>
+            <h3 id="founding-records-title">Discovery became responsibility.</h3>
+            <p>Three records trace the transfer from Starfleet discovery to Federation policy—and finally to permanent custodial administration.</p>
+          </div>
+          <div class="founding-records__documents">
+            <ol>
+              <li>
+                <a href="#first-survey-log" aria-haspopup="dialog">
+                  <div>
+                    <strong>Initial Planetary Contact and Survey</strong>
+                    <small>Captain Jean-Luc Picard, NCC-1701-D</small>
+                    <span>Stardate 41341.4</span>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+              </li>
+              <li>
+                <a href="#preservation-charter" aria-haspopup="dialog">
+                  <div>
+                    <strong>Preservation and Settlement Charter</strong>
+                    <small>Federation Council Resolution</small>
+                    <span>Stardate 42259.2</span>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+              </li>
+              <li>
+                <a href="#custodial-authority-order" aria-haspopup="dialog">
+                  <div>
+                    <strong>Custodial Authority Transfer</strong>
+                    <small>Federation Bureau of Planetary Heritage</small>
+                    <span>Stardate 43218.6</span>
+                  </div>
+                  <b aria-hidden="true">↗</b>
+                </a>
+              </li>
+            </ol>
           </div>
         </aside>
       </div>
@@ -124,6 +154,7 @@ import SiteModals from '../components/SiteModals.astro';
         <nav class="archive-paths" aria-label="Related orbital records">
           <a class="archive-link" href="#stellar-system">Stellar architecture ↘</a>
           <a class="archive-link" href="#natural-history">Satellite record ↘</a>
+          <a class="archive-link" href="#starbase-419">Starbase 419 ↘</a>
         </nav>
       </div>
       <ImageFigure
@@ -151,6 +182,7 @@ import SiteModals from '../components/SiteModals.astro';
           </header>
           <div class="reference-block__content">
             <p class="reference-lede">Maia A and Maia B form a close central binary. Maia I, II, and III occupy the inner system before the inhabited Maia IV. Maia C is the distant third star; Maia V through Maia XII occupy the much larger outer system beyond the red dwarf.</p>
+            <p>Starbase 419, in orbit of Maia X, is the Federation’s principal outer-system hub, coordinating navigation, scientific missions, resource operations, freight transfer, and Starfleet logistics while keeping most heavy industrial traffic away from Maia IV.</p>
             <OrbitalDiagram />
             <div class="stellar-census">
               <section>
@@ -335,6 +367,44 @@ import SiteModals from '../components/SiteModals.astro';
             />
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="starbase-story page-gutter" id="starbase-419" aria-labelledby="starbase-title">
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="kicker">07 · Outer-system operations · Maia X orbit</p>
+          <h2 id="starbase-title">Starbase 419</h2>
+        </div>
+        <p>The Federation’s principal operations hub in the Maia system—and the place where most of the traffic Maia IV was never meant to carry is coordinated.</p>
+      </div>
+
+      <ImageFigure
+        name="qt-starbase-419"
+        alt="Starbase 419 with gold operations markings in orbit above the blue-gray gas giant Maia X"
+        label="Starbase 419 · Maia X orbit"
+        caption="Operations-gold markings distinguish the station responsible for navigation, research support, freight transfer, resource activity, and Starfleet logistics across the outer Maia system."
+        sizes="(min-width: 900px) 92vw, 100vw"
+      />
+
+      <div class="starbase-story__record">
+        <div>
+          <p class="starbase-story__lede">Starbase 419 concentrates outer-system activity at Maia X, allowing Maia IV to remain a place of settlement and study rather than the system’s industrial port.</p>
+          <p>Traffic bound for Maia V through Maia XII is coordinated here. Three operations-marked California-class vessels—an assignment informally known as the Station Triad—are permanently based at Starbase 419, supporting survey teams, navigation infrastructure, freight movements, field repairs, and the less celebrated work required to keep a twelve-planet system functioning.</p>
+        </div>
+        <dl class="reference-list">
+          <div><dt>Location</dt><dd>Maia X orbit</dd></div>
+          <div><dt>Authority</dt><dd>United Federation of Planets · Starfleet</dd></div>
+          <div><dt>Primary role</dt><dd>Outer-system coordination and support</dd></div>
+          <div>
+            <dt>Assigned vessels</dt>
+            <dd class="starbase-story__ships">
+              <span>USS <i>Fremont</i> · NCC-75591</span>
+              <span>USS <i>Union City</i> · NCC-75592</span>
+              <span>USS <i>Milpitas</i> · NCC-75593</span>
+            </dd>
+          </div>
+        </dl>
       </div>
     </section>
 
