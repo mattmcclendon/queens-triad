@@ -61,7 +61,8 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .introduction__meta p { padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
 .introduction__copy { max-width: 54rem; }
 .introduction h2, .section-heading h2, .city-story h2, .landscape h2, .orbital h2 { font-size: clamp(3rem, 5.5vw, 6.2rem); }
-.introduction__grounding { max-width: 48rem; margin-bottom: 1.35rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 1.8vw, 1.85rem); line-height: 1.45; }
+.introduction__grounding, .heritage__lede { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.4rem, 1.8vw, 1.85rem); line-height: 1.45; }
+.introduction__grounding { max-width: 48rem; margin-bottom: 1.35rem; }
 .introduction__copy > p:last-child { max-width: 42rem; }
 .world-maxim { margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--line); color: #9a6f35; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.7rem, 2.7vw, 2.7rem); font-style: italic; line-height: 1.25; }
 
@@ -88,7 +89,7 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .heritage { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 9vw, 10rem); padding-block: clamp(8rem, 14vw, 15rem); border-top: 1px solid var(--line); }
 .heritage__heading { position: sticky; top: 3rem; align-self: start; }
 .heritage h2 { max-width: 34rem; font-size: clamp(3rem, 4.2vw, 5.2rem); }
-.heritage__lede { max-width: 54rem; margin-bottom: 4rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.7rem, 2.7vw, 2.75rem); line-height: 1.3; }
+.heritage__lede { max-width: 54rem; margin-bottom: 4rem; }
 .heritage__columns { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(2rem, 5vw, 5rem); color: var(--muted); }
 .founding-records { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(4rem, 7vw, 7rem); padding: 2rem 0 0; border-top: 1px solid var(--ink); color: var(--ink); }
 .founding-records__introduction .kicker { margin-bottom: 1rem; color: #9a6f35; }
@@ -113,8 +114,8 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .facts dd { margin: 0; font-size: .85rem; }
 
 .landscape { padding-bottom: clamp(8rem, 14vw, 15rem); }
-.section-heading--split { display: grid; grid-template-columns: 1.2fr .8fr; gap: 8vw; align-items: end; max-width: none; }
-.section-heading--split > p { color: var(--muted); max-width: 31rem; }
+.section-heading--split { display: grid; grid-template-columns: 1.2fr .8fr; gap: 8vw; align-items: start; max-width: none; }
+.section-heading--split > p { max-width: 31rem; margin: 0; padding-top: 2.66rem; color: var(--muted); }
 .landscape .image-figure picture { aspect-ratio: 16 / 8.5; }
 
 .night-transit { background: var(--navy); color: var(--ivory); }
@@ -211,8 +212,23 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
 .starbase-story__record { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(3rem, 8vw, 9rem); align-items: start; margin-top: clamp(3rem, 6vw, 5rem); }
 .starbase-story__record > div { max-width: 54rem; }
 .starbase-story__lede { margin-bottom: 1.5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.6rem, 2.4vw, 2.3rem); line-height: 1.3; }
-.starbase-story__lede + p { color: var(--muted); }
+.starbase-story__record > div > p:not(.starbase-story__lede) { color: var(--muted); }
+.starbase-story__record > div > p + p { margin-top: 1.25rem; }
 .starbase-story__ships { display: grid; gap: .45rem; }
+.resource-network { margin-top: clamp(5rem, 9vw, 9rem); padding-top: clamp(2.5rem, 4vw, 4rem); border-top: 1px solid var(--ink); }
+.resource-network__heading { display: grid; grid-template-columns: 1.2fr .8fr; gap: 8vw; align-items: start; }
+.resource-network__heading .kicker { margin-bottom: 1.35rem; }
+.resource-network h3 { margin: 0; font-size: clamp(2.2rem, 3.8vw, 4rem); }
+.resource-network__heading > p { max-width: 31rem; margin: 0; padding-top: 2.66rem; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+.resource-network__streams { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(3rem, 6vw, 5rem); }
+.resource-network__streams article { padding-right: clamp(1.5rem, 3vw, 3rem); }
+.resource-network__streams article + article { padding-left: clamp(1.5rem, 3vw, 3rem); border-left: 1px solid var(--line); }
+.resource-network__streams span { color: #9a6f35; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+.resource-network__streams h4 { margin: .8rem 0 1rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.55rem; font-weight: 500; line-height: 1.2; }
+.resource-network__streams p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.8; }
+.resource-network__figure { margin-top: clamp(3.5rem, 7vw, 6.5rem); }
+.resource-network__figure picture { aspect-ratio: 16 / 9; }
+.resource-network__limit { max-width: 72rem; margin: clamp(2.5rem, 5vw, 4rem) 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; line-height: 1.75; }
 
 .closing { padding-block: clamp(7rem, 12vw, 12rem); border-top: 1px solid var(--line); text-align: center; }
 .closing p { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2.2rem, 3vw, 3.6rem); line-height: 1.1; }
@@ -246,6 +262,8 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .pathways article, .pathways article + article { padding: 1.75rem 0; border-left: 0; border-bottom: 1px solid rgba(248,247,244,.3); }
   .orbital__copy { max-width: 34rem; }
   .planetary-record { grid-column: 1; }
+  .resource-network__heading { grid-template-columns: 1fr; gap: 1.25rem; }
+  .section-heading--split > p, .resource-network__heading > p { padding-top: 0; }
   .reference-block { grid-template-columns: 1fr; gap: 2.5rem; }
   .reference-block__heading h3 { max-width: 36rem; }
   .reference-metrics { grid-template-columns: repeat(2, 1fr); }
@@ -274,6 +292,9 @@ h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500
   .founding-records { padding: 2rem 0; }
   .founding-records__documents li > a { grid-template-columns: 1fr auto; gap: .75rem; }
   .planetary-record__summary, .stellar-census, .record-columns { grid-template-columns: 1fr; }
+  .resource-network__streams { grid-template-columns: 1fr; }
+  .resource-network__streams article { padding: 1.5rem 0; }
+  .resource-network__streams article + article { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .stellar-census section + section { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
   .reference-metrics { grid-template-columns: 1fr; }
   .fates-list li { grid-template-columns: 1fr; gap: .25rem; }

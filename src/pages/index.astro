@@ -390,12 +390,17 @@ import SiteModals from '../components/SiteModals.astro';
       <div class="starbase-story__record">
         <div>
           <p class="starbase-story__lede">Starbase 419 concentrates outer-system activity at Maia X, allowing Maia IV to remain a place of settlement and study rather than the system’s industrial port.</p>
+          <p>Starbase 419, or The Four-Nineteen, is a Presidio-class deep-space operations starbase: a standardized Federation ring-and-spine design whose interchangeable cargo, refinery, repair, laboratory, and habitat modules can be configured for distant systems without designing a new station for each assignment.</p>
           <p>Traffic bound for Maia V through Maia XII is coordinated here. Three operations-marked California-class vessels—an assignment informally known as the Station Triad—are permanently based at Starbase 419, supporting survey teams, navigation infrastructure, freight movements, field repairs, and the less celebrated work required to keep a twelve-planet system functioning.</p>
         </div>
         <dl class="reference-list">
           <div><dt>Location</dt><dd>Maia X orbit</dd></div>
+          <div><dt>Class</dt><dd>Presidio-class deep-space operations starbase</dd></div>
           <div><dt>Authority</dt><dd>United Federation of Planets · Starfleet</dd></div>
           <div><dt>Primary role</dt><dd>Outer-system coordination and support</dd></div>
+          <div><dt>Permanent complement</dt><dd>18,600 Starfleet and civilian personnel</dd></div>
+          <div><dt>Typical population aboard</dt><dd>24,000–28,000</dd></div>
+          <div><dt>Emergency capacity</dt><dd>45,000</dd></div>
           <div>
             <dt>Assigned vessels</dt>
             <dd class="starbase-story__ships">
@@ -406,6 +411,42 @@ import SiteModals from '../components/SiteModals.astro';
           </div>
         </dl>
       </div>
+
+      <section class="resource-network" aria-labelledby="resource-network-title">
+        <header class="resource-network__heading">
+          <div>
+            <p class="kicker">08 · Material network</p>
+            <h3 id="resource-network-title">What the outer system provides.</h3>
+          </div>
+          <p>Starbase 419 does not operate every extraction site directly. It coordinates a distributed network of atmospheric skimmers, lunar installations, asteroid processors, and civilian freight vessels, then assays, refines, stores, and routes their output.</p>
+        </header>
+        <div class="resource-network__streams">
+          <article>
+            <span>01 · Atmospheric harvest</span>
+            <h4>Fuel and reaction mass</h4>
+            <p>Deuterium, helium-3, and hydrogen are collected from the Maia system’s three outer gas giants, including Maia X, for fusion systems, starship operations, and regional energy reserves.</p>
+          </article>
+          <article>
+            <span>02 · Outer moons</span>
+            <h4>Volatiles and strategic minerals</h4>
+            <p>Uninhabited moons supply water ice, ammonia, methane, and other industrial volatiles. Dilithium-bearing formations are worked selectively under separate Federation licenses and continuous geological review.</p>
+          </article>
+          <article>
+            <span>03 · Asteroid processing</span>
+            <h4>Construction feedstocks</h4>
+            <p>Duranium, tritanium, iron, nickel, silicates, and carbonaceous material support station maintenance, ship repair, fabrication, and infrastructure projects throughout the sector.</p>
+          </article>
+        </div>
+        <ImageFigure
+          name="qt-cargo-hesperia"
+          alt="The in-system cargo vessel SS Hesperia passing Maia X on approach to Starbase 419"
+          label="SS Hesperia · Maia X approach"
+          caption="An in-system modular bulk carrier arrives at the Four-Nineteen with refined fuels, industrial volatiles, and construction feedstocks from the outer Maia system."
+          class="resource-network__figure"
+          sizes="(min-width: 900px) 92vw, 100vw"
+        />
+        <p class="resource-network__limit">Maia IV is excluded from the extraction network. Operations elsewhere in the system are suspended wherever biological activity, archaeological material, or an unregistered ecological relationship is detected.</p>
+      </section>
     </section>
 
     <section class="closing page-gutter">
